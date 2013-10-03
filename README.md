@@ -3,7 +3,7 @@ MAD_Lecture_Notes
 
 'Mobile Application Development with Android' course lecture notes and related materials.
 
-Table of Contents
+## Table of Contents
 
 01. Outline
 02. Introduction to Mobile Application Development
