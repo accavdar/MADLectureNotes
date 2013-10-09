@@ -1,0 +1,601 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Mobile Application Development with Android - Introduction to Mobile Application Development</title>
+
+    <meta name="description" content="Mobile Application Development with Android - Intro to MAD">
+    <meta name="author" content="Abdullah Cetin CAVDAR">
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="../reveal/css/reveal.min.css">
+    <link rel="stylesheet" href="../reveal/css/style.css">
+    <link rel="stylesheet" href="../reveal/css/theme/night.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="../reveal/lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+        document.write('<link rel="stylesheet" href="../reveal/css/print/' + ( window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">');
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="../reveal/lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section>
+    <h3>Mobile Application Development</h3>
+
+    <h3>with Android</h3>
+
+    <h4>Introduction to Mobile Application Development</h4>
+
+    <p>
+        <a href="http://cavdar.net" target="_blank">Abdullah Cetin CAVDAR</a> / <a
+            href="http://twitter.com/accavdar" target="_blank">@accavdar</a>
+    </p>
+</section>
+
+<section>
+    <section>
+        <h1>Why Mobile?</h1>
+    </section>
+
+    <section>
+        <h3>Collectively, Americans spend over <span class="focus">1.000.000 Month</span> on their mobile phones per
+            day.</h3>
+    </section>
+
+    <section>
+        <h3>Smartphones overtake PC’s for the first time: <span class="focus">2011</span></h3>
+    </section>
+
+    <section>
+        <h3>Smartphones overtake Feature Phones for first time: <span class="focus">April 2013</span></h3>
+    </section>
+
+    <section>
+        <h3>According to IDC, <span class="focus">418.6 million</span> mobile phones were shipped in Q1 2013, including
+            <span class="focus">216.2 </span> smart phones</h3>
+    </section>
+
+    <section>
+        <h3>44% of mobile phone owners use their devices more than <span class="focus">10 times</span> each day</h3>
+    </section>
+
+    <section>
+        <h2>Smart Phone Vendors</h2>
+        <img src="img/vendors.png"/>
+    </section>
+
+    <section>
+        <h2>Mobile OS</h2>
+        <img src="img/mobile_os.png"/>
+    </section>
+
+    <section>
+        <h2>Mobile App Economy</h2>
+        <img src="img/app_economy.png"/>
+    </section>
+
+    <section>
+        <h2>Apple's App Store is generating <span class="focus">$5.4 million</span> a day in app sales for the top 200 grossing iPhone and iPad apps</h2>
+    </section>
+
+    <section>
+        <h1>Mobile = $$$</h1>
+    </section>
+</section>
+
+<section>
+    <section>
+        <h1>Architecture</h1>
+    </section>
+
+    <section>
+        <h2>Traditional</h2>
+        <img src="img/architecture1.png"/>
+    </section>
+
+    <section>
+        <h2>Cloud</h2>
+        <img src="img/architecture2.png"/>
+    </section>
+
+    <section>
+        <h2>Zero Infrastructure</h2>
+        <ul>
+            <li>’rent’ it online on a pay-as-you-go subscription</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Focus</h2>
+        <ul>
+            <li>Instead of spending time and resources building server-side logic, focus on the mobile app
+                <span class="focus">functionality</span> and <span class="focus">user experience</span>.
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Application Services
+        </h2>
+        <ul>
+            <li>Mobile SDK</li>
+            <li>Security</li>
+            <li>Geolocation</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Scalability</h2>
+        <ul>
+            <li>The elastic scalability offered by cloud computing platforms</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Instagram powered by AWS</h2>
+        <img src="img/instagram.jpg"/>
+    </section>
+
+    <section>
+        <h2>Instagram Lessons Learned</h2>
+        <ul>
+            <li>Keep it very simple</li>
+            <li>Don’t re-invent the wheel</li>
+            <li>Go with proven and solid technologies when you can</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Instagram Architecture</h2>
+        <ul>
+            <li>100+ EC2 instances total for various purposes</li>
+            <li>Amazon’s Elastic Load Balancer routes requests and 3 nginx instances sit behind the ELB</li>
+            <li>Amazon’s Route53 for the DNS</li>
+            <li>25+ Django application servers on High-CPU Extra-Large machines</li>
+            <li>PostgreSQL (users, photo metadata, tags, etc) runs on 12 Quadruple Extra-Large memory
+                instances
+            </li>
+            <li>Several terabytes of photos are stored on Amazon S3</li>
+            <li>Amazon CloudFront as the CDN</li>
+            <li>...</li>
+        </ul>
+        <p>
+            <a href="http://highscalability.com/blog/2012/4/9/the-instagram-architecture-facebook-bought-for-a-cool-billio.html"
+               target="_blank">The Instagram Architecture Facebook Bought for a Cool Billion Dollars</a>
+        </p>
+    </section>
+</section>
+
+<section>
+    <section>
+        <h1>Mobile Software Platforms</h1>
+    </section>
+
+    <section>
+        <h3>Mobile Software Platforms</h3>
+
+        <p>Modern mobile OS combine the features of a PC operating system with </p>
+        <ul>
+            <li>Touch screen</li>
+            <li>Cellular</li>
+            <li>Wi-Fi</li>
+            <li>GPS</li>
+            <li>Camera</li>
+            <li>Speed Recognition</li>
+            <li>Voice Recorder</li>
+            <li>Music Player</li>
+            <li>NFC</li>
+            <li>...</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Mobile Software Platforms</h3>
+        <img src="img/msp1.png"/>
+    </section>
+
+    <section>
+        <h3>iOS</h3>
+        <img src="img/ios.png"/>
+    </section>
+
+    <section>
+        <h3>Android</h3>
+        <img src="img/android.png"/>
+    </section>
+
+    <section>
+        <h3>Windows Phone 7</h3>
+        <img src="img/wp7.png"/>
+    </section>
+
+    <section>
+        <h3>Development Needs</h3>
+        <img src="img/development_needs.png"/>
+    </section>
+
+    <section>
+        <h2>MVC</h2>
+        <img src="img/mvc.png"/>
+    </section>
+
+    <section>
+        <h2>Model</h2>
+        <img src="img/model.png"/>
+    </section>
+
+    <section>
+        <h2>View</h2>
+        <img src="img/view.png"/>
+    </section>
+
+    <section>
+        <h2>Controller</h2>
+        <img src="img/controller.png"/>
+    </section>
+
+    <section>
+        <h2>Android MVC</h2>
+        <img src="img/android_mvc.png"/>
+    </section>
+
+</section>
+
+<section>
+    <section>
+        <h1>Considerations & Limitations</h1>
+    </section>
+
+    <section>
+        <img src="img/cl.png"/>
+    </section>
+
+    <section>
+        <h1>?</h1>
+        <ul>
+            <li class="fragment roll-in">Power consumption</li>
+            <li class="fragment roll-in">Loss of data</li>
+            <li class="fragment roll-in">Limited user interfaces</li>
+            <li class="fragment roll-in">Limited memory</li>
+            <li class="fragment roll-in">Limited data transfer</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Application Design</h2>
+        <img src="img/nike.jpg"/>
+    </section>
+
+    <section>
+        <h2>Three Behavioral Trends</h2>
+    </section>
+
+    <section>
+        <h2>1. Convenience</h2>
+
+        <p>Less is more. Transform business and culture with simple solutions</p>
+    </section>
+
+    <section>
+        <h2>2. Context</h2>
+
+        <p>Help people find information that is useful in real time</p>
+    </section>
+
+    <section>
+        <h2>3. Fun</h2>
+
+        <p>Mix in delight, surprise, and reward to build and retain relationship</p>
+    </section>
+
+    <section>
+        <h2>Design Purpose</h2>
+        <img src="img/design_purpose.png"/>
+    </section>
+
+    <section>
+        <h2>Design Process</h2>
+        <ul>
+            <li class="fragment roll-in">User Centric Strategy</li>
+            <li class="fragment roll-in">Scope</li>
+            <li class="fragment roll-in">Information Architecture & Design</li>
+            <li class="fragment roll-in">Navigation Design</li>
+            <li class="fragment roll-in">Visual Design</li>
+        </ul>
+    </section>
+
+    <section>
+        <h1>UX</h1>
+    </section>
+
+    <section>
+        <img src="img/ux1.jpg"/>
+    </section>
+
+    <section>
+        <img src="img/ux2.jpg"/>
+    </section>
+
+    <section>
+        <img src="img/ux3.jpg"/>
+    </section>
+
+    <section>
+        <img src="img/ux4.jpg"/>
+    </section>
+
+</section>
+
+<section>
+    <section>
+        <h2>Mobile Application Types</h2>
+    </section>
+
+    <section>
+        <h2>1. Native Applications</h2>
+
+        <p>iOS, Android, Windows Phone, ...</p>
+    </section>
+
+    <section>
+        <h2>2. Mobile Web Application</h2>
+
+        <p>Browser based apps using standards like HTML5, CSS3, JS</p>
+    </section>
+
+    <section>
+        <h2>3. Hybrid Applications</h2>
+
+        <p>A thin native shell is built around a browser</p>
+    </section>
+
+    <section>
+        <h2>Native vs HTML5?</h2>
+        <img src="img/native_html5.png"/>
+    </section>
+
+    <section>
+        <h2>Native vs HTML5?</h2>
+        <ul>
+            <li class="fragment roll-in">UX</li>
+            <li class="fragment roll-in">Performance</li>
+            <li class="fragment roll-in">Security</li>
+            <li class="fragment roll-in">Cross-Platform Costs</li>
+            <li class="fragment roll-in">Updates & Distribution</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>UX</h2>
+
+        <p>Native apps can deliver best UX experinces leveraging the full capabilities of the device and OS.</p>
+    </section>
+
+    <section>
+        <h2>UX</h2>
+        <blockquote
+                cite="http://techcrunch.com/2012/09/11/mark-zuckerberg-our-biggest-mistake-with-mobile-was-betting-too-much-on-html5/">
+            &ldquo;The biggest mistake we made as a company was betting to much on HTML5 as opposed to native. It just
+            wasn't ready. -Mark Zuckerberg, Sep. 2012.&rdquo;
+        </blockquote>
+    </section>
+
+    <section>
+        <h2>Performance</h2>
+
+        <p>HTML5 still faces challenges in accessing device-native features access all mobile browsers and in rendering
+            graphically rich user interfaces.</p>
+    </section>
+
+    <section>
+        <h2>Security</h2>
+
+        <p>Native app's source and cache is encrypted. On the other hand, a web app's source is much easier to access
+            and corrupt.</p>
+    </section>
+
+    <section>
+        <h2>Cross Platform Costs</h2>
+
+        <p>Native apps require a new development and testing process for each platform. HTML5 was built to be the common
+            language of the web regardless of the device or OS.</p>
+    </section>
+
+    <section>
+        <h2>Updates & Distribution</h2>
+
+        <p>Web is an open platform which is not under a monopoly of any companies like Google or Apple. However HTML5 is
+            a bit slow in supporting new phone features as device makers innovate.</p>
+    </section>
+
+    <section>
+        <h2>And the Winner is...</h2>
+
+        <h3>Neither of them. </h3>
+    </section>
+</section>
+
+<section>
+    <section>
+        <h2>Mobile Web App Development</h2>
+    </section>
+
+    <section>
+        <h2>Advantages</h2>
+        <ul>
+            <li class="fragment roll-in">Use what you know</li>
+            <li class="fragment roll-in">No approval process</li>
+            <li class="fragment roll-in">Auto-upgrade</li>
+            <li class="fragment roll-in">Cross-Platform</li>
+            <li class="fragment roll-in">Be Agile</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Disadvantages</h2>
+        <ul>
+            <li class="fragment roll-in">
+                Not a silver bullet
+                <ul>
+                    <li>No single code base</li>
+                    <li>Still need to know how native apps work</li>
+                </ul>
+            </li>
+            <li class="fragment roll-in">Not native enough – UX Problems</li>
+            <li class="fragment roll-in">Performance Problems</li>
+            <li class="fragment roll-in">Exception handling</li>
+            <li class="fragment roll-in">Limited community</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Mobile JS Frameworks</h2>
+        <ul>
+            <li class="fragment roll-in">JQuery Mobile</li>
+            <li class="fragment roll-in">Sencha Touch</li>
+            <li class="fragment roll-in">jQTouch</li>
+            <li class="fragment roll-in">and many more...</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Cross Platform Frameworks</h2>
+        <ul>
+            <li class="fragment roll-in">PhoneGap</li>
+            <li class="fragment roll-in">Corona SDK</li>
+            <li class="fragment roll-in">RhoMobile</li>
+            <li class="fragment roll-in">and many more...</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>How Cross Platforms Work?</h2>
+
+        <h3>Ex. PhoneGap</h3>
+    </section>
+
+    <section>
+        <h2>PhoneGap</h2>
+        <img src="img/pg1.png"/>
+    </section>
+
+    <section>
+        <h2>PhoneGap</h2>
+        <img src="img/pg2.png"/>
+    </section>
+
+    <section>
+        <h2>PhoneGap</h2>
+        <img src="img/pg3.png"/>
+    </section>
+
+    <section>
+        <h2>PhoneGap Workflow</h2>
+        <img src="img/pg4.png"/>
+    </section>
+
+    <section>
+        <h2>PhoneGap Workflow</h2>
+        <img src="img/pg5.png"/>
+    </section>
+
+    <section>
+        <h2>PhoneGap Build</h2>
+        <img src="img/pg6.png"/>
+    </section>
+
+</section>
+
+
+<section>
+    <section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
+        <h2>Assignment #2</h2>
+        <ul>
+            <li class="fragment roll-in">
+                <strong>Mobile JS Frameworks</strong>
+                <ul>
+                    <li>Advantages, Disadvantages, Browser Support</li>
+                    <li>Compare with each other</li>
+                </ul>
+            </li>
+            <li class="fragment roll-in">
+                <strong>Cross Platform Mobile Frameworks</strong>
+                <ul>
+                    <li>Feature set (platform. device support etc.)</li>
+                    <li>Compare with each other</li>
+                </ul>
+            </li>
+            <li class="fragment roll-in">
+                <strong>Create A Greeting Application in PhoneGap for Android</strong>
+                <ul>
+                    <li>Get name from user</li>
+                    <li>Write Hello $name</li>
+                </ul>
+            </li>
+            <li class="fragment roll-in">Deadline: 21/10/2013</li>
+        </ul>
+    </section>
+</section>
+
+<section>
+    <section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
+        <h1>THE END</h1>
+
+        <h3 class="inverted">by Abdullah Cetin CAVDAR / <a href="http://twitter.com/accavdar"
+                                                           target="_blank">@accavdar</a>
+        </h3>
+    </section>
+</section>
+</div>
+</div>
+
+<script src="../reveal/lib/js/head.min.js"></script>
+<script src="../reveal/js/reveal.min.js"></script>
+
+<script>
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        dependencies: [
+            { src: '../reveal/lib/js/classList.js', condition: function () {
+                return !document.body.classList;
+            } },
+            { src: '../reveal/plugin/markdown/marked.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            } },
+            { src: '../reveal/plugin/markdown/markdown.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            } },
+            { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            } },
+            { src: '../reveal/plugin/zoom-js/zoom.js', async: true, condition: function () {
+                return !!document.body.classList;
+            } },
+            { src: '../reveal/plugin/notes/notes.js', async: true, condition: function () {
+                return !!document.body.classList;
+            } }
+        ]
+    });
+</script>
+</body>
+</html>
