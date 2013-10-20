@@ -7,6 +7,11 @@ MAD_Lecture_Notes
 
 01. Outline
 02. Introduction to Mobile Application Development
+03. Application Fundamentals
 
 ## Lab Assignments
 You can find Lab Assignments in our wiki page [here](https://github.com/accavdar/MAD_Lecture_Notes/wiki/Lab-Assignments).
+
+## Projects Ideas
+You can find Project Ideas in our wiki page [here](https://github.com/accavdar/MAD_Lecture_Notes/wiki/Project-Ideas).
+
