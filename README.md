@@ -15,3 +15,6 @@ You can find Lab Assignments in our wiki page [here](https://github.com/accavdar
 ## Projects Ideas
 You can find Project Ideas in our wiki page [here](https://github.com/accavdar/MAD_Lecture_Notes/wiki/Project-Ideas).
 
+## Google Group
+Please subscribe our Google Group from [here](https://groups.google.com/forum/#!forum/bbm422_mad).
+
