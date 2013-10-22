@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Mobile Application Development with Android - Application Fundamentals</title>
+
+    <meta name="description" content="Mobile Application Development with Android - App Fundamentals">
+    <meta name="author" content="Abdullah Cetin CAVDAR">
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="../static/reveal/css/reveal.min.css">
+    <link rel="stylesheet" href="../static/reveal/css/theme/night.css" id="theme">
+    <link rel="stylesheet" href="../static/css/style.css">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="../static/reveal/lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+        document.write('<link rel="stylesheet" href="../static/reveal/css/print/' + ( window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">');
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="../static/reveal/lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section>
+    <h3>Mobile Application Development</h3>
+
+    <h3>with Android</h3>
+
+    <h3>Application Fundamentals</h3>
+
+    <p>
+        <a href="http://cavdar.net" target="_blank">Abdullah Cetin CAVDAR</a> / <a
+            href="http://twitter.com/accavdar" target="_blank">@accavdar</a>
+    </p>
+</section>
+
+<section>
+    <section>
+        <h1>What's Android?</h1>
+    </section>
+
+    <section>
+        <blockquote>
+            &ldquo;complete set of software for mobile devices: an operating system, middleware, and key
+            mobile applications&rdquo;
+        </blockquote>
+    </section>
+
+    <section>
+        <h2>Complete Stack</h2>
+        <ul>
+            <li class="fragment roll-in">Boot Loader</li>
+            <li class="fragment roll-in">Device Drivers</li>
+            <li class="fragment roll-in">Libraries</li>
+            <li class="fragment roll-in">Software APIs</li>
+            <li class="fragment roll-in">Included Applications</li>
+            <li class="fragment roll-in">SDK</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>It goes beyond mobile</h2>
+
+        <h2>Android is <span class="focus">everywhere</span></h2>
+    </section>
+
+    <section>
+        <h2>Key Platform Components</h2>
+        <img src="img/kpc.png"/>
+    </section>
+
+    <section>
+        <h3>System Architecture</h3>
+        <img src="img/sa.png"/>
+    </section>
+
+    <section>
+        <h2>Java?</h2>
+
+        <h3>based on <a href="http://harmony.apache.org/" target="_blank">Apache Harmony</a></h3>
+    </section>
+
+    <section>
+        <h3>Packages and Libraries</h3>
+        <img src="img/pl.png"/>
+    </section>
+
+    <section>
+        <h2>Dalvik VM</h2>
+        <ul>
+            <li class="fragment roll-in">Google's own Java VM</li>
+            <li class="fragment roll-in">Optimized to run on embedded systems such as mobile phones</li>
+            <li class="fragment roll-in">It works on any UNIX-based operating system, including vanilla Linux, BSD, and
+                MacOS X
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Dalvik Design Requirements</h2>
+        <ul>
+            <li class="fragment roll-in">It must be fast, even on weak CPUs</li>
+            <li class="fragment roll-in">It must run on systems with little memory</li>
+            <li class="fragment roll-in">It must run in an energy-efficient way</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Dalvik</h2>
+        <ul>
+            <li class="fragment roll-in">Not multiple <span class="focus">.class</span> files, a single <span
+                    class="focus">.dex</span> file
+            </li>
+            <li class="fragment roll-in">Unlike the Oracle/Sun JVM, which is a stack-based virtual machine, Dalvik is
+                based on registers
+            </li>
+            <li class="fragment roll-in">Uncompressed DEX file is about half the size of a compressed JAR file</li>
+            <li class="fragment roll-in">Source code is compiled into class files, they’re then dexed (compiled) by the
+                Android <span class="focus">dx</span> tool
+            </li>
+            <li class="fragment roll-in">Dalvik also includes a JIT compiler (from Android 2.2)</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Zygote VM</h2>
+        <img src="img/zvm.png"/>
+    </section>
+
+    <section>
+        <h1>Linux?</h1>
+        <img src="img/shell.png"/>
+    </section>
+
+    <section>
+        <h1>Users & Files</h1>
+        <img src="img/uf.png"/>
+    </section>
+
+    <section>
+        <h1>Sandbox</h1>
+
+        <h3>Applications can only access its own files and data</h3>
+    </section>
+
+    <section>
+        <h1>Native Libraries</h1>
+    </section>
+
+    <section>
+        <h2>Audio and Video processing</h2>
+        <ul>
+            <li class="fragment roll-in">Advanced 2D/3D graphics rendering using <a
+                    href="http://code.google.com/p/skia/" target="_blank">SGL</a> and OpenGL ES
+            </li>
+            <li class="fragment roll-in">
+                Supports a host of common file formats and codecs
+                <ul>
+                    <li>including MP3, MIDI, Ogg Vorbis, PCM, and AAC for audio;</li>
+                    <li>and H.263, H.264, and MPEG-4 for video playback</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Storage Engine</h2>
+
+        <h3><span class="focus">SQLite</span></h3>
+        <ul>
+            <li class="fragment roll-in">Embedded fully transactional database engine</li>
+            <li class="fragment roll-in">Storing a database’s schema, indices, and tables in a single, cross-platform
+                portable file
+            </li>
+            <li class="fragment roll-in">SQLite is deployed as a single library file of about 200-300 kilobytes</li>
+            <li class="fragment roll-in">Supports ACID (atomic, consistent, isolated, durable) transactions, and
+                supports B-tree indexing for fast data access
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Web Integration</h2>
+
+        <h3>Android comes equipped with <span class="focus">WebKit</span></h3>
+        <ul>
+            <li class="fragment roll-in">A complete HTML rendering engine also used in Apple’s Safari and Google’s
+                Chrome
+            </li>
+            <li class="fragment roll-in">Supports CSS Level 3 stylesheets</li>
+            <li class="fragment roll-in">Built in a performant JavaScript engine called <span class="focus">V8</span></li>
+        </ul>
+    </section>
+
+    <section>
+        <h1>SDK Tools</h1>
+        <ul>
+            <li class="fragment roll-in">Assignment 3 :(</li>
+            <li class="fragment roll-in">Hint: <span class="focus">dx</span></li>
+        </ul>
+    </section>
+</section>
+
+<section>
+    <section>
+        <h1>Hello Android</h1>
+    </section>
+
+    <section>
+        <h1>Project Structure</h1>
+    </section>
+
+    <section>
+        <h1>Activity</h1>
+    </section>
+
+    <section>
+        <h1>Resource Files</h1>
+    </section>
+
+    <section>
+        <h1>R.java</h1>
+    </section>
+
+    <section>
+        <h1>Android Manifest</h1>
+    </section>
+</section>
+
+
+<section>
+    <section>
+        <h1>Building Blocks</h1>
+    </section>
+
+    <section>
+        <h1>Activity</h1>
+    </section>
+
+    <section>
+        <h1>Service</h1>
+    </section>
+
+    <section>
+        <h1>Broadcast Receiver</h1>
+    </section>
+
+    <section>
+        <h1>Content Provider</h1>
+    </section>
+</section>
+
+<section>
+    <section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
+        <h2>Assignment #3</h2>
+        <ul>
+            <li class="fragment roll-in">
+                <strong>What are the SDK tools in Android? Briefly explain them.</strong>
+            </li>
+            <li class="fragment roll-in">Deadline: 28/10/2013</li>
+        </ul>
+    </section>
+</section>
+
+<section>
+    <section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
+        <h1>THE END</h1>
+
+        <h3 class="inverted">by Abdullah Cetin CAVDAR / <a href="http://twitter.com/accavdar"
+                                                           target="_blank">@accavdar</a>
+        </h3>
+    </section>
+</section>
+</div>
+</div>
+
+<script src="../static/reveal/lib/js/head.min.js"></script>
+<script src="../static/reveal/js/reveal.min.js"></script>
+
+<script>
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        dependencies: [
+            { src: '../reveal/lib/js/classList.js', condition: function () {
+                return !document.body.classList;
+            } },
+            { src: '../reveal/plugin/markdown/marked.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            } },
+            { src: '../reveal/plugin/markdown/markdown.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            } },
+            { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            } },
+            { src: '../reveal/plugin/zoom-js/zoom.js', async: true, condition: function () {
+                return !!document.body.classList;
+            } },
+            { src: '../reveal/plugin/notes/notes.js', async: true, condition: function () {
+                return !!document.body.classList;
+            } }
+        ]
+    });
+</script>
+</body>
+</html>
