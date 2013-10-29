@@ -48,7 +48,67 @@
         <section>
             <section>
                 <h1>Application</h1>
+
+                <p>The <span class="focus">Application</span> object serves as a central context for all of the
+                    components (activities, services, broadcast receivers, and content providers)</p>
             </section>
+
+            <section>
+                <h2>Application Lifecycle</h2>
+                <ul>
+                    <li class="fragment roll-in">Every Android application is hosted by an <span class="focus">Application</span>
+                        object
+                    </li>
+                    <li class="fragment roll-in">
+                        The Application object has its own lifecycle:
+                        <ul>
+                            <li><span class="focus">onCreate</span> is called when the Application is started</li>
+                            <li><span class="focus">onLowMemory</span> is called when the system requests that
+                                applications try to clean up
+                                what they can
+                            </li>
+                            <li><span class="focus">onTerminate</span> is <em>sometimes</em> called when the Application
+                                is
+                                stopped
+                            </li>
+                            <li><span class="focus">onConfigurationChanged</span> is called when the device
+                                Configuration changes
+                                while the application is running
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>UserID, Process and Thread</h2>
+                <ul>
+                    <li class="fragment roll-in">Application is started with <span class="focus">a unique user ID</span>
+                        and kicked off inside <span class="focus">a new system process</span> running under that ID
+                    </li>
+                    <li class="fragment roll-in">Each process, by default, runs one main <span
+                            class="focus">Thread</span></li>
+                    <li class="fragment roll-in">This main thread often called the <span class="focus">UI Thread</span>
+                    </li>
+                    <li class="fragment roll-in">Any component that needs to do so should start its own separate Thread from the main Thread</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Process, App and Thread</h2>
+                <img src="img/pat.png"/>
+            </section>
+
+            <section>
+                <h2>PS</h2>
+                <img src="img/ps.png"/>
+            </section>
+
+            <section>
+                <h2>Process Priorities</h2>
+                <img src="img/pp.png"/>
+            </section>
+
         </section>
 
         <section>
