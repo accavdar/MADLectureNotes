@@ -576,22 +576,22 @@
         transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
         dependencies: [
-            { src: '../reveal/lib/js/classList.js', condition: function () {
+            { src: '../static/reveal/lib/js/classList.js', condition: function () {
                 return !document.body.classList;
             } },
-            { src: '../reveal/plugin/markdown/marked.js', condition: function () {
+            { src: '../static/reveal/plugin/markdown/marked.js', condition: function () {
                 return !!document.querySelector('[data-markdown]');
             } },
-            { src: '../reveal/plugin/markdown/markdown.js', condition: function () {
+            { src: '../static/reveal/plugin/markdown/markdown.js', condition: function () {
                 return !!document.querySelector('[data-markdown]');
             } },
-            { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function () {
+            { src: '../static/reveal/plugin/highlight/highlight.js', async: true, callback: function () {
                 hljs.initHighlightingOnLoad();
             } },
-            { src: '../reveal/plugin/zoom-js/zoom.js', async: true, condition: function () {
+            { src: '../static/reveal/plugin/zoom-js/zoom.js', async: true, condition: function () {
                 return !!document.body.classList;
             } },
-            { src: '../reveal/plugin/notes/notes.js', async: true, condition: function () {
+            { src: '../static/reveal/plugin/notes/notes.js', async: true, condition: function () {
                 return !!document.body.classList;
             } }
         ]
