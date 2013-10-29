@@ -382,7 +382,9 @@
                     <li>Ex: <span class="focus">android.R.string.yes</span></li>
                 </ul>
             </li>
-            <li class="fragment roll-in">Use <span class="focus">Resources.getString(R.string.hello_android)</span> method for strings</li>
+            <li class="fragment roll-in">Use <span class="focus">Resources.getString(R.string.hello_android)</span> method
+                for strings
+            </li>
             <li class="fragment roll-in">Use <span class="focus">@</span> prefix in XML files
                 <ul>
                     <li>Ex: <span class="focus">@string/hello_android</span></li>
@@ -398,6 +400,7 @@
 
     <section>
         <h1>Sample R.java</h1>
+
         <p>The R class maps each resource ID to its location or compiled content</p>
         <img src="img/r.png"/>
     </section>
@@ -407,19 +410,159 @@
     </section>
 
     <section>
-        <h1>Activity</h1>
+        <h2>Declaring Layouts</h2>
+        <ul>
+            <li class="fragment roll-in">Primarily declared in XML files</li>
+            <li class="fragment roll-in">May also be defined within Java code</li>
+            <li class="fragment roll-in">Used to design screens, items for lists, and other UI elements</li>
+            <li class="fragment roll-in">IDs in XML layouts let us refer to widgets in code, so we can populate them with
+                data, attach event listeners, and so on
+            </li>
+        </ul>
     </section>
 
     <section>
+        <h2>Sample Layout</h2>
+        <img src="img/layout.png"/>
+    </section>
+
+    <section>
+        <h2>Layouts in Android </h2>
+        <ul>
+            <li class="fragment roll-in">
+                Linear Layout
+                <ul>
+                    <li>TableLayout</li>
+                </ul>
+            </li>
+            <li class="fragment roll-in">Relative Layout</li>
+            <li class="fragment roll-in">Frame Layout</li>
+        </ul>
+    </section>
+
+    <section>
+        <h1>Views & Widgets</h1>
+        <ul>
+            <li class="fragment roll-in"><span class="focus">android.view.View</span> is the base class for UI objects</li>
+            <li class="fragment roll-in">
+                There are three major types of views
+                <ul>
+                    <li><span class="focus">SurfaceView</span> - provides a dedicated drawing surface embedded inside of a
+                        view
+                    </li>
+                    <li><span class="focus">View Group</span> - is a special view that can contain other views</li>
+                    <li><span class="focus">Widget</span> - basic UI components (TextView, Spinner, ListView etc)</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+
+    <section>
+        <h1>Activity</h1>
+
+        <p>An Activity is a <span class="focus">single focused thing</span> that the user can do</p>
+    </section>
+
+    <section>
+        <h2>Activity</h2>
+        <ul>
+            <li class="fragment roll-in">Activity creates a window for UI</li>
+            <li class="fragment roll-in">Activity manages lifecycle and state</li>
+            <li class="fragment roll-in">Activity provides an endpoint for intents</li>
+            <li class="fragment roll-in">Activity handles interface events</li>
+            <li class="fragment roll-in">Activity controls menus</li>
+            <li class="fragment roll-in">...</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Activity Basics</h2>
+        <ul>
+            <li class="fragment roll-in">Extend <span class="focus">Activity</span> class or specialized subclasses to
+                create an Activity
+            </li>
+            <li class="fragment roll-in">
+                The most common Activity lifecycle methods are:
+                <ul>
+                    <li><span class="focus">onCreate</span> - Called when an Activity is first created</li>
+                    <li><span class="focus">onPause</span> — Called when an Activity is going into the background</li>
+                    <li><span class="focus">onPause</span> — Called when an Activity is going into the background</li>
+                    <li>more in next lecture</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>List Based Activities</h2>
+        <ul>
+            <li class="fragment roll-in">
+                Specialized Activity for managing lists (ListView)
+                <ul>
+                    <li>ListView is a scrolling container that may have an arbitrary number of child views, which we call
+                        list items
+                    </li>
+                </ul>
+            </li>
+            <li class="fragment roll-in">Extend <span class="focus">ListActivity</span> to create list activity</li>
+            <li class="fragment roll-in">It manages a ListView and hence saves you from writing the boilerplate code
+                required for setting it up and responding to events
+            </li>
+        </ul>
+    </section>
+
+
+    <section>
         <h1>Adapters</h1>
+        <ul>
+            <li class="fragment roll-in">Used to feed data from a <span class="focus">data source</span> to a <span
+                    class="focus">view</span></li>
+            <li class="fragment roll-in">An Adapter adapts a certain data source and hence lets you plug in different kinds
+                of data sources into a view (an AdapterView)
+            </li>
+            <li class="fragment roll-in">Most notable one is <span class="focus">ArrayAdapter</span></li>
+            <li class="fragment roll-in">CustomAdapters?</li>
+        </ul>
     </section>
 
     <section>
         <h1>Intent & Intent Filters</h1>
+        <ul>
+            <li class="fragment roll-in">used in communicating between components, and sharing data between them</li>
+            <li class="fragment roll-in">an <span class="focus">Intent</span> is a description of an action you want to
+                happen
+            </li>
+            <li class="fragment roll-in">an <span class="focus">IntentFilter</span> is a means for a compo- nent to declare
+                it’s capable of handling a specific <span class="focus">Intent</span></li>
+        </ul>
+    </section>
+
+    <section>
+        <h1>Using Intents</h1>
+
+        <p>If a component wants to perform an action, it declares that intention with an <span class="focus">Intent</span>
+            and hands it off to the
+            system. The system then decodes the Intent and decides which other component, <span
+                    class="focus">Activity</span>, <span class="focus">Service</span>, or
+            <span class="focus">BroadcastReceiver</span> can handle the job</p>
+    </section>
+
+    <section>
+        <h1>Intents & Intent Filters</h1>
+        <img src="img/intents.png"/>
     </section>
 
     <section>
         <h2>Application Object</h2>
+        <ul>
+            <li class="fragment roll-in">Used as a data structure for holding an application’s global state</li>
+            <li class="fragment roll-in">It is created when the process for your application is created</li>
+            <li class="fragment roll-in">It is not bound to a particular <span class="focus">Activity</span> or <span
+                    class="focus">Service</span></li>
+            <li class="fragment roll-in">Used as a data structure for holding an application’s global state</li>
+            <li class="fragment roll-in">Extend <span class="focus">android.app.Application</span> class to create</li>
+        </ul>
     </section>
 </section>
 
