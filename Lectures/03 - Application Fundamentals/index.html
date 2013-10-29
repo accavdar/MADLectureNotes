@@ -204,7 +204,8 @@
                 Chrome
             </li>
             <li class="fragment roll-in">Supports CSS Level 3 stylesheets</li>
-            <li class="fragment roll-in">Built in a performant JavaScript engine called <span class="focus">V8</span></li>
+            <li class="fragment roll-in">Built in a performant JavaScript engine called <span class="focus">V8</span>
+            </li>
         </ul>
     </section>
 
@@ -214,44 +215,6 @@
             <li class="fragment roll-in">Assignment 3 :(</li>
             <li class="fragment roll-in">Hint: <span class="focus">dx</span></li>
         </ul>
-    </section>
-</section>
-
-<section>
-    <section>
-        <h1>Hello Android</h1>
-    </section>
-
-    <section>
-        <h1>Project Structure</h1>
-    </section>
-
-    <section>
-        <h1>Activity</h1>
-    </section>
-
-    <section>
-        <h1>Resource Files</h1>
-    </section>
-
-    <section>
-        <h1>R.java</h1>
-    </section>
-
-    <section>
-        <h1>Android Manifest</h1>
-        <ul>
-            <li class="fragment roll-in">Application Name</li>
-            <li class="fragment roll-in">Components</li>
-            <li class="fragment roll-in">Required permissions</li>
-            <li class="fragment roll-in">Application features</li>
-            <li class="fragment roll-in">Minimum API level</li>
-            <li class="fragment roll-in">Other</li>
-        </ul>
-    </section>
-
-    <section>
-        <h1>Debugging</h1>
     </section>
 </section>
 
@@ -271,6 +234,7 @@
             <li class="fragment roll-in">Primary class for interacting with user</li>
             <li class="fragment roll-in">Usually implements a focused task</li>
             <li class="fragment roll-in">Usually Involves one screenful of data</li>
+            <li class="fragment roll-in">Dictate the UI, and handle events and interaction</li>
             <li class="fragment roll-in">Example: Calculator</li>
         </ul>
     </section>
@@ -299,8 +263,157 @@
         <ul>
             <li class="fragment roll-in">Store & retrieve data across applications</li>
             <li class="fragment roll-in">Uses database-style interface</li>
+            <li class="fragment roll-in">Allows you to expose a data API to other applications</li>
             <li class="fragment roll-in">Example: Contacts</li>
         </ul>
+    </section>
+
+    <section>
+        <h2>Essential App Components</h2>
+        <img src="img/ec.png"/>
+    </section>
+
+    <section>
+        <h2>Additional Components</h2>
+        <ul>
+            <li class="fragment roll-in"><span class="focus">Views</span> - UI elements that are drawn onscreen</li>
+            <li class="fragment roll-in"><span class="focus">Layouts</span> - View hierarchies that control screen
+                format/appearance
+            </li>
+            <li class="fragment roll-in"><span class="focus">Intents</span> - Messages wiring components together</li>
+            <li class="fragment roll-in"><span class="focus">Resources</span> - External elements, such as strings and
+                drawables
+            </li>
+            <li class="fragment roll-in"><span class="focus">Manifest</span> - Configuration for applications</li>
+        </ul>
+    </section>
+
+    <section>
+        <h1>Project Structure</h1>
+        <img src="img/ps.png"/>
+    </section>
+
+    <section>
+        <h1>Android Manifest</h1>
+        <ul>
+            <li class="fragment roll-in">Application Name</li>
+            <li class="fragment roll-in">Components</li>
+            <li class="fragment roll-in">Required permissions</li>
+            <li class="fragment roll-in">Application features</li>
+            <li class="fragment roll-in">Minimum API level</li>
+            <li class="fragment roll-in">Other</li>
+        </ul>
+    </section>
+
+    <section>
+        <h1>Sample Manifest</h1>
+        <img src="img/manifest.png"/>
+    </section>
+
+    <section>
+        <h1>Resources</h1>
+        <ul>
+            <li class="fragment roll-in">images used in your application</li>
+            <li class="fragment roll-in">internationalized text</li>
+            <li class="fragment roll-in">or any type of static value that you want to externalize</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Resources Location</h2>
+        <ul>
+            <li class="fragment roll-in">defined in <span class="focus">/res</span> directory</li>
+            <li class="fragment roll-in">accessed either in <span class="focus">code</span> or through <span
+                    class="focus">xml</span></li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Defining Resources</h2>
+        <ul>
+            <li class="fragment roll-in">Every resource has an ID</li>
+            <li class="fragment roll-in">Every resource has a specific type</li>
+            <li class="fragment roll-in">Resources have a specific location and file they are defined in</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Resources Types</h2>
+        <ul>
+            <li class="fragment roll-in">Strings</li>
+            <li class="fragment roll-in">Layouts</li>
+            <li class="fragment roll-in">Shapes</li>
+            <li class="fragment roll-in">Colors</li>
+            <li class="fragment roll-in">Drawables</li>
+            <li class="fragment roll-in">Menus</li>
+            <li class="fragment roll-in">Styles</li>
+            <li class="fragment roll-in">Audio/Video (raw)</li>
+            <li class="fragment roll-in">...</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Sample Resource File</h2>
+        <img src="img/strings.png"/>
+    </section>
+
+    <section>
+        <h2>Assets</h2>
+        <ul>
+            <li class="fragment roll-in">They are non-resource resources</li>
+            <li class="fragment roll-in">They are not preprocessed as resources and assigned an ID</li>
+            <li class="fragment roll-in">They are placed in <span class="focus">/assets</span> directory</li>
+            <li class="fragment roll-in">Ex: An html file used in a WebView</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Accessing Resources</h2>
+        <ul>
+            <li class="fragment roll-in">
+                To access resources in code, use <span class="focus">R.java</span>
+                <ul>
+                    <li>Ex: <span class="focus">R.string.hello_android</span></li>
+                </ul>
+            </li>
+            <li class="fragment roll-in">
+                Use <span class="focus">android</span> namespace for system resources
+                <ul>
+                    <li>Ex: <span class="focus">android.R.string.yes</span></li>
+                </ul>
+            </li>
+            <li class="fragment roll-in">Use <span class="focus">Resources.getString(R.string.hello_android)</span> method for strings</li>
+            <li class="fragment roll-in">Use <span class="focus">@</span> prefix in XML files
+                <ul>
+                    <li>Ex: <span class="focus">@string/hello_android</span></li>
+                </ul>
+            </li>
+            <li class="fragment roll-in">To include android namespace use a colon
+                <ul>
+                    <li>Ex: <span class="focus">@android:string/yes</span></li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h1>Layouts, Views Widgets</h1>
+    </section>
+
+    <section>
+        <h1>Activity</h1>
+    </section>
+
+    <section>
+        <h1>Adapters</h1>
+    </section>
+
+    <section>
+        <h1>Intent & Intent Filters</h1>
+    </section>
+
+    <section>
+        <h2>Application Object</h2>
     </section>
 </section>
 
@@ -342,22 +455,22 @@
         transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
         dependencies: [
-            { src: '../reveal/lib/js/classList.js', condition: function () {
+            { src: '../static/reveal/lib/js/classList.js', condition: function () {
                 return !document.body.classList;
             } },
-            { src: '../reveal/plugin/markdown/marked.js', condition: function () {
+            { src: '../static/reveal/plugin/markdown/marked.js', condition: function () {
                 return !!document.querySelector('[data-markdown]');
             } },
-            { src: '../reveal/plugin/markdown/markdown.js', condition: function () {
+            { src: '../static/reveal/plugin/markdown/markdown.js', condition: function () {
                 return !!document.querySelector('[data-markdown]');
             } },
-            { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function () {
+            { src: '../static/reveal/plugin/highlight/highlight.js', async: true, callback: function () {
                 hljs.initHighlightingOnLoad();
             } },
-            { src: '../reveal/plugin/zoom-js/zoom.js', async: true, condition: function () {
+            { src: '../static/reveal/plugin/zoom-js/zoom.js', async: true, condition: function () {
                 return !!document.body.classList;
             } },
-            { src: '../reveal/plugin/notes/notes.js', async: true, condition: function () {
+            { src: '../static/reveal/plugin/notes/notes.js', async: true, condition: function () {
                 return !!document.body.classList;
             } }
         ]
