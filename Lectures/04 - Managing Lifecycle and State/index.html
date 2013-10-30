@@ -90,7 +90,9 @@
                             class="focus">Thread</span></li>
                     <li class="fragment roll-in">This main thread often called the <span class="focus">UI Thread</span>
                     </li>
-                    <li class="fragment roll-in">Any component that needs to do so should start its own separate Thread from the main Thread</li>
+                    <li class="fragment roll-in">Any component that needs to do so should start its own separate Thread
+                        from the main Thread
+                    </li>
                 </ul>
             </section>
 
@@ -114,6 +116,27 @@
         <section>
             <section>
                 <h1>Activity Lifecycle</h1>
+
+                <p>Activities have three nested lifetime phases:</p>
+                <ul>
+                    <li class="fragment roll-in">Entire lifetime (created to destroyed)</li>
+                    <li class="fragment roll-in">Visible lifetime (restarted to stopped)</li>
+                    <li class="fragment roll-in">Foreground lifetime (resumed to paused)</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Activity Lifecycle</h2>
+                <img src="img/lm.png"/>
+            </section>
+
+            <section>
+                <h2>onCreate, onResume, onPause</h2>
+                <img src="img/crp.png"/>
+            </section>
+
+            <section>
+                <h1>Demo</h1>
             </section>
         </section>
 
