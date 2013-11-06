@@ -144,11 +144,53 @@
             <section>
                 <h1>Activity Instance State</h1>
             </section>
+
+            <section>
+                <h1>State Types</h1>
+                <ul>
+                    <li class="fragment roll-in"><span class="focus">Instance state</span> - Lives as long as the instance of your <em>Activity</em></li>
+                    <li class="fragment roll-in">
+                        <span class="focus">Persistent state</span> - Outlives your <em>Activity</em>
+                        <ul>
+                            <li>files</li>
+                            <li>preferences</li>
+                            <li>database</li>
+                            <li>...</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h1>When?</h1>
+                <ul>
+                    <li class="fragment roll-in"><span class="focus">Instance state saved</span> — System destroys an <em>Activity</em> (config change or otherwise) or before placing it in
+                        such a background state</li>
+                    <li class="fragment roll-in"><span class="focus">Instance state NOT saved</span> — <em>finish</em> is called (default for Back key)</li>
+                </ul>
+            </section>
         </section>
 
         <section>
             <section>
                 <h1>Task</h1>
+            </section>
+
+            <section>
+                <h2>Definition of Task</h2>
+                <p>Group of activities to get something done</p>
+                <p>One Activity always kicks off a task, and it’s known as the <span class="focus">root</span> activity</p>
+            </section>
+
+            <section>
+                <h2>Task and Stack</h2>
+                <img src="img/task.png"/>
+            </section>
+
+            <section>
+                <h2>Task Switcher</h2>
+                <img src="img/task_switcher.png"/>
+                <p>PS: Long press on the <span class="focus">Home</span> key</p>
             </section>
         </section>
 
