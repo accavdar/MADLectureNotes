@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Mobile Application Development with Android - UI Development</title>
+
+    <meta name="description" content="Mobile Application Development with Android - UI Development">
+    <meta name="author" content="Abdullah Cetin CAVDAR">
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="../static/reveal/css/reveal.min.css">
+    <link rel="stylesheet" href="../static/reveal/css/theme/night.css" id="theme">
+    <link rel="stylesheet" href="../static/css/style.css">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="../static/reveal/lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+        document.write('<link rel="stylesheet" href="../static/reveal/css/print/' + ( window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">');
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="../static/reveal/lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h3>Mobile Application Development</h3>
+
+            <h3>with Android</h3>
+
+            <h3>UI Development</h3>
+
+            <p>
+                <a href="http://cavdar.net" target="_blank">Abdullah Cetin CAVDAR</a> / <a
+                    href="http://twitter.com/accavdar" target="_blank">@accavdar</a>
+            </p>
+        </section>
+
+        <section>
+            <section>
+                <h1>Layouts</h1>
+            </section>
+
+            <section>
+                <h2>Frame Layout</h2>
+            </section>
+
+            <section>
+                <h2>Linear Layout</h2>
+            </section>
+
+            <section>
+                <h2>Table Layout</h2>
+            </section>
+
+            <section>
+                <h2>Relative Layout</h2>
+            </section>
+
+            <section>
+                <h1>Composition</h1>
+
+                <h1><span class="focus">&lt;include&gt;</span> and <span class="focus">&lt;merge&gt;</span></h1>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>List View and Adapters</h2>
+            </section>
+
+            <section>
+                <h2>Demo</h2>
+            </section>
+        </section>
+
+        <section>
+            <section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
+                <h1>THE END</h1>
+
+                <h3 class="inverted">by Abdullah Cetin CAVDAR / <a href="http://twitter.com/accavdar"
+                                                                   target="_blank">@accavdar</a>
+                </h3>
+            </section>
+        </section>
+    </div>
+</div>
+
+<script src="../static/reveal/lib/js/head.min.js"></script>
+<script src="../static/reveal/js/reveal.min.js"></script>
+
+<script>
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        dependencies: [
+            { src: '../static/reveal/lib/js/classList.js', condition: function () {
+                return !document.body.classList;
+            } },
+            { src: '../static/reveal/plugin/markdown/marked.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            } },
+            { src: '../static/reveal/plugin/markdown/markdown.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            } },
+            { src: '../static/reveal/plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            } },
+            { src: '../static/reveal/plugin/zoom-js/zoom.js', async: true, condition: function () {
+                return !!document.body.classList;
+            } },
+            { src: '../static/reveal/plugin/notes/notes.js', async: true, condition: function () {
+                return !!document.body.classList;
+            } }
+        ]
+    });
+</script>
+</body>
+</html>
