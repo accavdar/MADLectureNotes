@@ -1,0 +1,104 @@
+<resources>
+    <string-array name="movies">
+        <item>The Shawshank Redemption:1994</item>
+        <item>The Godfather:1972</item>
+        <item>The Godfather, Part II:1974</item>
+        <item>The Good, the Bad, and the Ugly:1966</item>
+        <item>Pulp Fiction:1994</item>
+        <item>Schindler\'s List:1993</item>
+        <item>12 Angry Men:1957</item>
+        <item>One Flew Over The Cuckoo\'s Nest:1975</item>
+        <item>The Dark Knight:2009</item>
+        <item>Star Wars - The Empire Strikes Back:1980</item>
+        <item>Casablanca:1942</item>
+        <item>Star Wars:1977</item>
+        <item>The Lord of the Rings - The Return of the King:2003</item>
+        <item>The Seven Samurai:1954</item>
+        <item>GoodFellas:1990</item>
+        <item>Rear Window:1954</item>
+        <item>City of God:2002</item>
+        <item>Raiders of the Lost Ark:1981</item>
+        <item>Fight Club:1999</item>
+        <item>The Lord of the Rings - The Fellowship of the Ring:2001</item>
+        <item>Once Upon a Time in the West:1969</item>
+        <item>The Usual Suspects:1995</item>
+        <item>Psycho:1960</item>
+        <item>The Silence of the Lambs:1991</item>
+        <item>Sunset Boulevard:1950</item>
+        <item>The Matrix:1999</item>
+        <item>Memento:2000</item>
+        <item>Dr. Strange Love:1964</item>
+        <item>North By Northwest:1959</item>
+        <item>Se7en:1995</item>
+        <item>It\'s A Wonderful Life:1946</item>
+        <item>The Lord of the Rings - The Two Towers:2002</item>
+        <item>Citizen Kane:1941</item>
+        <item>Leon, aka The Professional:1994</item>
+        <item>Apocalypse Now:1979</item>
+        <item>American Beauty:1999</item>
+        <item>American History X:1998</item>
+        <item>Taxi Driver:1976</item>
+        <item>Forrest Gump:1994</item>
+        <item>Vertigo:1958</item>
+        <item>Lawrence of Arabia:1962</item>
+        <item>Up:2009</item>
+        <item>WALL-E:2008</item>
+        <item>Inglourious Basterds:2009</item>
+        <item>Paths of Glory:1957</item>
+        <item>Amelie:2001</item>
+        <item>Double Indemnity:1944</item>
+        <item>Alien:1979</item>
+        <item>M:1931</item>
+        <item>Terminator 2 - Judgment Day:1991</item>
+        <item>To Kill A Mockingbird:1962</item>
+        <item>Saving Private Ryan:1998</item>
+        <item>A Clockwork Orange:1971</item>
+        <item>The Shining:1980</item>
+        <item>The Treasure of the Sierra Madre:1948</item>
+        <item>The Departed:2006</item>
+        <item>The Third Man:1949</item>
+        <item>The Pianist:2002</item>
+        <item>The Lives of Others:2006</item>
+        <item>Chinatown:1974</item>
+        <item>Spirited Away:2001</item>
+        <item>City Lights:1931</item>
+        <item>Aliens:1986</item>
+        <item>Eternal Sunshine of the Spotless Mind:2004</item>
+        <item>L.A. Confidential:1997</item>
+        <item>Requiem for a Dream:2000</item>
+        <item>Das Boot:1981</item>
+        <item>Reservoir Dogs:1992</item>
+        <item>The Bridge On The River Kwai:1957</item>
+        <item>Monty Python and the Holy Grail:1974</item>
+        <item>Pan\'s Labyrinth:2006</item>
+        <item>Raging Bull:1980</item>
+        <item>All About Eve:1950</item>
+        <item>The Maltese Falcon:1941</item>
+        <item>Slumdog Millionaire:2008</item>
+        <item>Singin\' In The Rain:1952</item>
+        <item>District 9:2009</item>
+        <item>Rashomon:1950</item>
+        <item>Modern Times:1936</item>
+        <item>Some Like It Hot:1959</item>
+        <item>The Prestige:2006</item>
+        <item>Rebecca:1940</item>
+        <item>Downfall:2004</item>
+        <item>Gran Torino:2008</item>
+        <item>Cinema Paradiso:1988</item>
+        <item>Amadeus:1984</item>
+        <item>The Apartment:1960</item>
+        <item>2001 - A Space Odyssey:1968</item>
+        <item>The Elephant Man:1980</item>
+        <item>Life is Beautiful:1997</item>
+        <item>Metropolis:1927</item>
+        <item>The Great Dictator:1940</item>
+        <item>Once Upon a Time in America:1984</item>
+        <item>Back to the Future:1985</item>
+        <item>Full Metal Jacket:1987</item>
+        <item>The Bicycle Thief:1948</item>
+        <item>Mr. Smith Goes to Washington:1939</item>
+        <item>The Sting:1973</item>
+        <item>The Great Escape:1963</item>
+        <item>Braveheart:1995</item>
+    </string-array>
+</resources>
