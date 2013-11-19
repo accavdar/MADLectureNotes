@@ -31,117 +31,223 @@
 </head>
 <body>
 <div class="reveal">
-    <div class="slides">
-        <section>
-            <h3>Mobile Application Development</h3>
+<div class="slides">
+<section>
+    <h3>Mobile Application Development</h3>
 
-            <h3>with Android</h3>
+    <h3>with Android</h3>
 
-            <h3>Threads and Concurrency</h3>
+    <h3>Threads and Concurrency</h3>
 
-            <p>
-                <a href="http://cavdar.net" target="_blank">Abdullah Cetin CAVDAR</a> / <a
-                    href="http://twitter.com/accavdar" target="_blank">@accavdar</a>
-            </p>
-        </section>
+    <p>
+        <a href="http://cavdar.net" target="_blank">Abdullah Cetin CAVDAR</a> / <a
+            href="http://twitter.com/accavdar" target="_blank">@accavdar</a>
+    </p>
+</section>
 
-        <section>
-            <section>
-                <h1>Thread?</h1>
-            </section>
+<section>
+    <section>
+        <h1>Thread?</h1>
+    </section>
 
-            <section>
-                <h2>Conceptual View</h2>
+    <section>
+        <h2>Conceptual View</h2>
+        <ul>
+            <li class="fragment roll-in">Parallel computations running in a process</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Implementation View</h2>
+        <ul>
+            <li class="fragment roll-in">Each Thread has a program counter and a stack</li>
+            <li class="fragment roll-in">The heap and static areas are shared across threads</li>
+        </ul>
+    </section>
+
+    <section>
+        <img src="img/threads.png"/>
+    </section>
+
+    <section>
+        <h2>Processes vs Threads</h2>
+        <img src="img/pvst.png"/>
+    </section>
+
+    <section>
+        <h2>Basic Thread Use Case</h2>
+        <ul>
+            <li class="fragment roll-in">Instantiate a <span class="focus">Thread</span> object</li>
+            <li class="fragment roll-in">
+                Invoke the Thread’s <span class="focus">start()</span> method
                 <ul>
-                    <li class="fragment roll-in">Parallel computations running in a process</li>
+                    <li>Thread will invoke its own <span class="focus">run()</span></li>
                 </ul>
-            </section>
+            </li>
+            <li class="fragment roll-in">Thread terminates when <span class="focus">run()</span> returns</li>
+        </ul>
+    </section>
 
-            <section>
-                <h2>Implementation View</h2>
+    <section>
+        <h2>Simple Thread</h2>
+        <img src="img/simple_thread.png"/>
+    </section>
+
+    <section>
+        <h1>The UIThread</h1>
+    </section>
+
+    <section>
+        <h2>The UIThread</h2>
+        <ul>
+            <li class="fragment roll-in">Applications have a main thread</li>
+            <li class="fragment roll-in">Application components in the same process
+                use the same main thread
+            </li>
+            <li class="fragment roll-in">User interaction, system callbacks & lifecycle
+                methods handled in the UI thread
+            </li>
+            <li class="fragment roll-in">UI toolkit is not thread safe</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Implications</h2>
+        <ul>
+            <li class="fragment roll-in">
+                Blocking the UI thread hurts responsiveness
                 <ul>
-                    <li class="fragment roll-in">Each Thread has a program counter and a stack</li>
-                    <li class="fragment roll-in">The heap and static areas are shared across threads</li>
+                    <li>Long-running ops should run in background thread</li>
                 </ul>
-            </section>
-
-            <section>
-                <img src="img/threads.png"/>
-            </section>
-
-            <section>
-                <h2>Processes vs Threads</h2>
-                <img src="img/pvst.png"/>
-            </section>
-
-
-            <section>
-                <h2>Basic Thread Use Case</h2>
+            </li>
+            <li class="fragment roll-in">
+                Don’t access the UI toolkit from non-UI thread
                 <ul>
-                    <li class="fragment roll-in">Instantiate a <span class="focus">Thread</span> object</li>
-                    <li class="fragment roll-in">
-                        Invoke the Thread’s <span class="focus">start()</span> method
-                        <ul>
-                            <li>Thread will invoke its own <span class="focus">run()</span></li>
-                        </ul>
-                    </li>
-                    <li class="fragment roll-in">Thread terminates when <span class="focus">run()</span> returns</li>
+                    <li>UI & background threads will need to communicate</li>
                 </ul>
-            </section>
 
-            <section>
-                <h2>Simple Thread</h2>
-                <img src="img/simple_thread.png"/>
-            </section>
+            </li>
+        </ul>
+    </section>
+</section>
 
-            <section>
-                <h1>The UIThread</h1>
-            </section>
+<section>
+    <section>
+        <h1>Handler</h1>
+    </section>
+</section>
 
-            <section>
-                <h2>The UIThread</h2>
+<section>
+    <section>
+        <h1>AsyncTask</h1>
+    </section>
+
+    <section>
+        <h2>AsyncTask</h2>
+        <ul>
+            <li class="fragment roll-in">Structured way to manage work involving background & UI threads</li>
+            <li class="fragment roll-in">
+                In background thread
                 <ul>
-                    <li class="fragment roll-in">Applications have a main thread</li>
-                    <li class="fragment roll-in">Application components in the same process
-                        use the same main thread
-                    </li>
-                    <li class="fragment roll-in">User interaction, system callbacks & lifecycle
-                        methods handled in the UI thread
-                    </li>
-                    <li class="fragment roll-in">UI toolkit is not thread safe</li>
+                    <li>Perform work</li>
                 </ul>
-            </section>
-
-            <section>
-                <h2>Implications</h2>
+            </li>
+            <li class="fragment roll-in">
+                In UI Thread
                 <ul>
-                    <li class="fragment roll-in">
-                        Blocking the UI thread hurts responsiveness
-                        <ul>
-                            <li>Long-running ops should run in background thread</li>
-                        </ul>
-                    </li>
-                    <li class="fragment roll-in">
-                        Don’t access the UI toolkit from non-UI thread
-                        <ul>
-                            <li>UI & background threads will need to communicate</li>
-                        </ul>
-
-                    </li>
+                    <li>Setup</li>
+                    <li>Indicate Progress</li>
+                    <li>Publish Results</li>
                 </ul>
-            </section>
-        </section>
 
-        <section>
-            <section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
-                <h1>THE END</h1>
+            </li>
+        </ul>
+    </section>
 
-                <h3 class="inverted">by Abdullah Cetin CAVDAR / <a href="http://twitter.com/accavdar"
-                                                                   target="_blank">@accavdar</a>
-                </h3>
-            </section>
-        </section>
-    </div>
+    <section>
+        <h2>AsyncTask</h2>
+
+        <p>Generic Class</p>
+
+        <p><span class=focus>android.os.AsyncTask&lt;Params, Progress, Result&gt;</span></p>
+        <ul>
+            <li class="fragment roll-in"><span class=focus>Params</span> – Types used in background work</li>
+            <li class="fragment roll-in"><span class=focus>Progress</span> – Types used when indicating progress</li>
+            <li class="fragment roll-in"><span class=focus>Result</span> – Types of result</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>AsyncTask</h2>
+
+        <p>task goes through 4 steps</p>
+        <ul>
+            <li class="fragment roll-in"><span class=focus>onPreExecute()</span></li>
+            <li class="fragment roll-in"><span class=focus>doInBackground(Params...)</span></li>
+            <li class="fragment roll-in"><span class=focus>onProgressUpdate(Progress...)</span></li>
+            <li class="fragment roll-in"><span class=focus>onPostExecute(Result)</span></li>
+        </ul>
+    </section>
+
+
+    <section>
+        <h1>onPreExecute</h1>
+        <ul>
+            <li class="fragment roll-in"><span class="focus">void onPreExecute()</span></li>
+            <li class="fragment roll-in">Runs before <span class="focus">doInBackground()</span></li>
+        </ul>
+    </section>
+
+    <section>
+        <h1>doInBackground</h1>
+        <ul>
+            <li class="fragment roll-in"><span class="focus">Result doInBackground (Params... params)</span></li>
+            <li class="fragment roll-in">Performs work</li>
+            <li class="fragment roll-in">Can call void <span class="focus">publishProgress(Progress... values)</span>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h1>onProgressUpdate</h1>
+        <ul>
+            <li class="fragment roll-in"><span class="focus">void onProgressUpdate (Progress... values)</span></li>
+            <li class="fragment roll-in">Invoked in response to <span class="focus">publishProgress()</span></li>
+        </ul>
+    </section>
+
+    <section>
+        <h1>onPostExecute</h1>
+        <ul>
+            <li class="fragment roll-in"><span class="focus">void onPostExecute (Result result)</span></li>
+            <li class="fragment roll-in">Runs after <span class="focus">doInBackground()</span></li>
+        </ul>
+    </section>
+
+    <section>
+        <img src="img/at1.png">
+        <img src="img/at2.png">
+    </section>
+
+</section>
+
+<section>
+    <section>
+        <h1>Timer</h1>
+    </section>
+</section>
+
+
+<section>
+    <section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
+        <h1>THE END</h1>
+
+        <h3 class="inverted">by Abdullah Cetin CAVDAR / <a href="http://twitter.com/accavdar"
+                                                           target="_blank">@accavdar</a>
+        </h3>
+    </section>
+</section>
+</div>
 </div>
 
 <script src="../static/reveal/lib/js/head.min.js"></script>
