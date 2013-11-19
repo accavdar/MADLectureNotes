@@ -46,6 +46,90 @@
         </section>
 
         <section>
+            <section>
+                <h1>Thread?</h1>
+            </section>
+
+            <section>
+                <h2>Conceptual View</h2>
+                <ul>
+                    <li class="fragment roll-in">Parallel computations running in a process</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Implementation View</h2>
+                <ul>
+                    <li class="fragment roll-in">Each Thread has a program counter and a stack</li>
+                    <li class="fragment roll-in">The heap and static areas are shared across threads</li>
+                </ul>
+            </section>
+
+            <section>
+                <img src="img/threads.png"/>
+            </section>
+
+            <section>
+                <h2>Processes vs Threads</h2>
+                <img src="img/pvst.png"/>
+            </section>
+
+
+            <section>
+                <h2>Basic Thread Use Case</h2>
+                <ul>
+                    <li class="fragment roll-in">Instantiate a <span class="focus">Thread</span> object</li>
+                    <li class="fragment roll-in">
+                        Invoke the Thread’s <span class="focus">start()</span> method
+                        <ul>
+                            <li>Thread will invoke its own <span class="focus">run()</span></li>
+                        </ul>
+                    </li>
+                    <li class="fragment roll-in">Thread terminates when <span class="focus">run()</span> returns</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Simple Thread</h2>
+                <img src="img/simple_thread.png"/>
+            </section>
+
+            <section>
+                <h1>The UIThread</h1>
+            </section>
+
+            <section>
+                <h2>The UIThread</h2>
+                <ul>
+                    <li class="fragment roll-in">Applications have a main thread</li>
+                    <li class="fragment roll-in">Application components in the same process
+                        use the same main thread
+                    </li>
+                    <li class="fragment roll-in">User interaction, system callbacks & lifecycle
+                        methods handled in the UI thread
+                    </li>
+                    <li class="fragment roll-in">UI toolkit is not thread safe</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Implications</h2>
+                <ul>
+                    <li class="fragment roll-in">
+                        Blocking the UI thread hurts responsiveness
+                        <ul>
+                            <li>Long-running ops should run in background thread</li>
+                        </ul>
+                    </li>
+                    <li class="fragment roll-in">
+                        Don’t access the UI toolkit from non-UI thread
+                        <ul>
+                            <li>UI & background threads will need to communicate</li>
+                        </ul>
+
+                    </li>
+                </ul>
+            </section>
         </section>
 
         <section>
