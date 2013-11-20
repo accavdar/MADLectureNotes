@@ -129,6 +129,32 @@
             </li>
         </ul>
     </section>
+
+    <section>
+        <h2>Posting Runnables on UI Thread</h2>
+        <pre>
+            <code class="java" contenteditable="false" data-trim>
+image.post(new Runnable() {
+    public void run() {
+        image.setImageBitmap(bitmap);
+    }
+});
+            </code>
+        </pre>
+    </section>
+
+    <section>
+        <h2>Posting Runnables on UI Thread</h2>
+        <pre>
+            <code class="java" contenteditable="false" data-trim>
+SimpleThread.this.runOnUiThread(new Runnable() {
+    public void run() {
+        iview.setImageBitmap(bitmap);
+    }
+});
+            </code>
+        </pre>
+    </section>
 </section>
 
 <section>
