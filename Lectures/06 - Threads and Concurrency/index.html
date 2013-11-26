@@ -199,20 +199,6 @@
                     <li>Puts Runnable on MessageQueue</li>
                 </ul>
             </li>
-
-            <li class="fragment roll-in">
-                <span class="focus">Looper</span>
-                <ul>
-                    <li>One per Thread</li>
-                    <li>
-                        Dispatches MessageQueue entries
-                        <ul>
-                            <li>Calls handleMessage() for Messages</li>
-                            <li>Calls run() for Runnables</li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
         </ul>
     </section>
 
@@ -369,6 +355,24 @@
     <section>
         <h1>Timer</h1>
     </section>
+
+    <section>
+        <h2>Timer</h2>
+
+        <p>used for <span class="focus">delayed job</span> or <span class="focus">delayed task</span></p>
+    </section>
+
+    <section>
+        <h2>Timer & TimerTask</h2>
+        <blockquote>A <span class="focus">Timer</span> can be thought of as a task director class: it schedules jobs (implemented using
+            <span class="focus">TimerTask</span>) for execution, and when the specified time has passed, it executes them on a separate thread.
+        </blockquote>
+    </section>
+
+    <section>
+        <h1>Splash Screen?</h1>
+    </section>
+
 </section>
 
 
