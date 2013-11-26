@@ -134,11 +134,11 @@
         <h2>Posting Runnables on UI Thread</h2>
         <pre>
             <code class="java" contenteditable="false" data-trim>
-image.post(new Runnable() {
-    public void run() {
-        image.setImageBitmap(bitmap);
-    }
-});
+                image.post(new Runnable() {
+                public void run() {
+                image.setImageBitmap(bitmap);
+                }
+                });
             </code>
         </pre>
     </section>
@@ -147,11 +147,11 @@ image.post(new Runnable() {
         <h2>Posting Runnables on UI Thread</h2>
         <pre>
             <code class="java" contenteditable="false" data-trim>
-SimpleThread.this.runOnUiThread(new Runnable() {
-    public void run() {
-        iview.setImageBitmap(bitmap);
-    }
-});
+                SimpleThread.this.runOnUiThread(new Runnable() {
+                public void run() {
+                iview.setImageBitmap(bitmap);
+                }
+                });
             </code>
         </pre>
     </section>
@@ -160,6 +160,114 @@ SimpleThread.this.runOnUiThread(new Runnable() {
 <section>
     <section>
         <h1>Handler</h1>
+    </section>
+
+    <section>
+        <h2>Handler</h2>
+        <ul>
+            <li class="fragment roll-in">Threads can also communicate by posting Messages & Runnables to a <span
+                    class="focus">Handler</span></li>
+            <li class="fragment roll-in">
+                <span class="focus">Message</span>
+                <ul>
+                    <li>Can contain a code, data object & args</li>
+                    <li>Recipient (Handler) implements response</li>
+                </ul>
+            </li>
+            <li class="fragment roll-in">
+                <span class="focus">Runnable</span>
+                <ul>
+                    <li>Contains an instance of the Runnable interface</li>
+                    <li>Sender implements response</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Handler</h2>
+        <ul>
+            <li class="fragment roll-in">
+                <span class="focus">sendMessage()</span>
+                <ul>
+                    <li>Puts Message on MessageQueue</li>
+                </ul>
+            </li>
+            <li class="fragment roll-in">
+                <span class="focus">post()</span>
+                <ul>
+                    <li>Puts Runnable on MessageQueue</li>
+                </ul>
+            </li>
+
+            <li class="fragment roll-in">
+                <span class="focus">Looper</span>
+                <ul>
+                    <li>One per Thread</li>
+                    <li>
+                        Dispatches MessageQueue entries
+                        <ul>
+                            <li>Calls handleMessage() for Messages</li>
+                            <li>Calls run() for Runnables</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Handler Usage</h2>
+        <ul>
+            <li class="fragment roll-in">Schedule Message/Runnable for <span class="focus">future execution</span></li>
+            <li class="fragment roll-in">Enqueue action to be performed on a <span class="focus">different thread</span>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Runnables & Handlers</h2>
+        <ul>
+            <li class="fragment roll-in"><span class="focus">boolean post(Runnable r)</span></li>
+            <li class="fragment roll-in"><span class="focus">boolean postAtTime(Runnable r, long uptimeMillis)</span>
+            </li>
+            <li class="fragment roll-in"><span class="focus">boolean postDelayed(Runnable r, long delayMillis)</span>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Messages & Handlers</h2>
+        <ul>
+            <li class="fragment roll-in">
+                Create Message & set Message content
+                <ul>
+                    <li>Handler.obtainMessage()</li>
+                    <li>Message.obtain()</li>
+                    <li>...</li>
+                </ul>
+            </li>
+            <li class="fragment roll-in">
+                Message parameters include
+                <ul>
+                    <li>int arg1, int arg2</li>
+                    <li>int what</li>
+                    <li>Object object</li>
+                    <li>Bundle data</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Runnables & Handlers</h2>
+        <ul>
+            <li class="fragment roll-in"><span class="focus">sendMessage()</span></li>
+            <li class="fragment roll-in"><span class="focus">sendMessageAtFrontOfQueue()</span></li>
+            <li class="fragment roll-in"><span class="focus">sendMessageAtTime()</span>
+            <li class="fragment roll-in"><span class="focus">sendMessageDelayed()</span>
+            </li>
+        </ul>
     </section>
 </section>
 
