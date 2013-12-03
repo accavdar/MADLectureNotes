@@ -49,6 +49,187 @@
             <section>
                 <h1>Files</h1>
             </section>
+
+            <section>
+                <h2>File</h2>
+                <ul>
+                    <li class="fragment roll-in">Represents a file system entity identified by a pathname</li>
+                    <li class="fragment roll-in">
+                        Storage areas classified as internal or external
+                        <ul>
+                            <li>Internal memory usually used for application
+                                private files
+                            </li>
+                            <li>External memory used for public files</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>File API</h2>
+                <ul>
+                    <li class="fragment roll-in">
+                        <span class="focus">boolean isDirectory()</span>
+                        <ul>
+                            <li>Return true if this File represents a directory</li>
+                        </ul>
+                    </li>
+                    <li class="fragment roll-in">
+                        <span class="focus">String getAbsolutePath()</span>
+                        <ul>
+                            <li>Returns the absolute path to this File</li>
+                        </ul>
+                    </li>
+                    <li class="fragment roll-in">
+                        <span class="focus">boolean setReadable(boolean readable)</span>
+                        <ul>
+                            <li>Sets read permission on this File</li>
+                        </ul>
+                    </li>
+                    <li class="fragment roll-in">...</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Write to a File</h2>
+<pre>
+<code class="java" contenteditable="false" data-trim>
+// Open file with ContextWrapper.openFileOutput()
+FileOutputStream fos = openFileOutput(fileName, MODE_PRIVATE);
+
+PrintWriter pw = new PrintWriter(new BufferedWriter(new OutputStreamWriter(fos)));
+
+// Write to file
+pw.println(...); ...
+
+// Close file
+pw.close();
+</code>
+</pre>
+            </section>
+
+            <section>
+                <h2>Read a File</h2>
+<pre>
+<code class="java" contenteditable="false" data-trim>
+// Open file with ContextWrapper.openFileInput()
+FileInputStream fis = openFileInput(fileName);
+
+BufferedReader fr = new BufferedReader(new InputStreamReader(fis));
+
+String line = "";
+// Read from file
+while (null != (line = fr.readLine())) {
+    // process data
+}
+
+// Close file
+fr.close();
+</code>
+</pre>
+            </section>
+
+            <section>
+                <h2>Cache Files</h2>
+                <ul>
+                    <li class="fragment roll-in">
+                        Cache files are temporary files that may be deleted by the system when storage is low
+                    </li>
+                    <li class="fragment roll-in">
+                        <span class="focus">File Context.getCacheDir()</span>
+                        <ul>
+                            <li>Returns absolute path to an application-specific directory that can be used for
+                                temporary files
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="fragment roll-in">Files removed when application uninstalled</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>External Memory Files</h2>
+                <ul>
+                    <li class="fragment roll-in">
+                        Removable media may appear/disappear without warning
+                    </li>
+                    <li class="fragment roll-in">
+                        <span class="focus">String Environment.getExternalStorageState()</span>
+                        <ul>
+                            <li>MEDIA_MOUNTED - present & mounted with read/write access</li>
+                            <li>MEDIA_MOUNTED_READ_ONLY - present & mounted with read-only access</li>
+                            <li>MEDIA_REMOVED - not present</li>
+                        </ul>
+                    </li>
+                    <li class="fragment roll-in">
+                        Need permission to write external files
+                        <ul>
+                            <li><span class="focus">&lt;uses-permission android:name= “android.permission.WRITE_EXTERNAL_STORAGE" /&gt;</span>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Writing an External Memory File</h2>
+<pre>
+<code class="java" contenteditable="false" data-trim>
+if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
+    File outFile = new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES),fileName);
+    try {
+        BufferedOutputStream os = new BufferedOutputStream(new FileOutputStream(outFile));
+        BufferedInputStream is =
+            new BufferedInputStream(getResources().openRawResource(R.drawable.icon));
+
+        copy(is, os);
+    } catch (FileNotFoundException e) {}
+}
+</code>
+</pre>
+
+            </section>
+
+            <section>
+                <h2>Writing an External Memory File</h2>
+<pre>
+<code class="java" contenteditable="false" data-trim>
+private void copy(InputStream is, OutputStream os) {
+    final byte[] buf = new byte[1024];
+    int numBytes;
+
+    try {
+        while (-1 != (numBytes = is.read(buf))) {
+            os.write(buf, 0, numBytes);
+        }
+    } catch (IOException e) {
+
+    } finally {
+        try {
+            is.close();
+            os.close();
+        } catch (IOException e) {
+
+        }
+    }
+}
+</code>
+</pre>
+            </section>
+
+            <section>
+                <h2>Saving Cache Files</h2>
+                <ul>
+                    <li class="fragment roll-in">
+                        <span class="focus">Context.getExternalCacheDir()</span> returns a File representing external storage directory for cache files
+                    </li>
+                    <li class="fragment roll-in">
+                        Files removed when application uninstalled
+                    </li>
+                </ul>
+            </section>
+
         </section>
 
         <section>
