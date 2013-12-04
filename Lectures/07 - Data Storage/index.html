@@ -363,6 +363,138 @@ editor.commit();
             <section>
                 <h1>SQLite Database</h1>
             </section>
+
+            <section>
+                <h2>SQLite</h2>
+                <ul>
+                    <li class="fragment roll-in">
+                        SQLite provides in-memory database
+                    </li>
+
+                    <li class="fragment roll-in">
+                        Designed to operate within a very small footprint (<300kB) within a single cross-platform disk file
+                    </li>
+
+                    <li class="fragment roll-in">
+                        Implements most of SQL92
+                    </li>
+
+                    <li class="fragment roll-in">
+                        Supports ACID transactions
+                        <ul>
+                            <li>ACID: atomic, consistent, isolated & durable</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Opening a Database</h2>
+                <ul>
+                    <li class="fragment roll-in">
+                        Recommended method relies on a helper class called <span class="focus">SQLiteOpenHelper</span>
+                    </li>
+
+                    <li class="fragment roll-in">
+                        Create a subclass SQLiteOpenHelper
+                        <ul>
+                            <li>Override onCreate()</li>
+                            <li>Execute CREATE TABLE command</li>
+                        </ul>
+                    </li>
+
+                    <li class="fragment roll-in">
+                        Use Constructor to instantiate subclass
+                    </li>
+
+                    <li class="fragment roll-in">
+                        Use SQLiteOpenHelper methods to open & return underlying database
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Opening a Database</h2>
+<pre>
+<code class="java" contenteditable="false" data-trim>
+public class DatabaseOpenHelper extends SQLiteOpenHelper {
+    final private static String CREATE_CMD = "CREATE TABLE artists
+                (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL)”;
+
+    public DatabaseOpenHelper(Context context) {
+        super(context, “artist_db”, null, 1);
+    }
+
+    public void onCreate(SQLiteDatabase db) {
+        db.execSQL(CREATE_CMD);
+    }
+}
+</code>
+</pre>
+            </section>
+
+            <section>
+                <h2>Insertion</h2>
+<pre>
+<code class="java" contenteditable="false" data-trim>
+private void insertArtists() {
+    ContentValues values = new ContentValues();
+    values.put(“name”, "Lady Gaga");
+    db.insert("artists", null, values);
+    values.clear();
+
+    values.put(“name”, "Johnny Cash");
+    db.insert("artists", null, values);
+    values.clear();
+
+    values.put(“name”, "Ludwig von Beethoven");
+    db.insert("artists", null, values);
+}
+</code>
+</pre>
+            </section>
+
+            <section>
+                <h2>Deletion</h2>
+<pre>
+<code class="java" contenteditable="false" data-trim>
+private int deleteLadyGaga() {
+    return db.delete("artists”, “name” + "= ?", new String [] {"Lady Gaga"});
+}
+</code>
+</pre>
+            </section>
+
+            <section>
+                <h2>Querying</h2>
+<pre>
+<code class="java" contenteditable="false" data-trim>
+private Cursor readArtists() {
+    // returns all rows
+    return db.query("artists", new String [] {“id”, ”name”},
+            null, new String[] {}, null, null, null);
+}
+</code>
+</pre>
+            </section>
+
+            <section>
+                <h2>Examining the Database</h2>
+                <ul>
+                    <li class="fragment roll-in">
+                        Databases stored in /data/data/&th;package name&gt;/databases/
+                    </li>
+
+                    <li class="fragment roll-in">
+                        Can examine database with sqlite3
+                        <ul>
+                            <li># adb -s emulator-5554 shell</li>
+                            <li># sqlite3 /data/data/.../databases/artist_db</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
         </section>
 
         <section>
