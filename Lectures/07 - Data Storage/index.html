@@ -236,6 +236,127 @@ private void copy(InputStream is, OutputStream os) {
             <section>
                 <h1>SharedPreferences</h1>
             </section>
+
+            <section>
+                <h2>SharedPreferences</h2>
+                <ul>
+                    <li class="fragment roll-in">
+                        A persistent map
+                        <ul>
+                            <li>Holds key-value pairs of simple data types</li>
+                            <li>Automatically managed across application uses</li>
+                        </ul>
+                    </li>
+                    <li class="fragment roll-in">
+                        Often used for long-term storage of customizable application data such as user preferences
+                        <ul>
+                            <li>User ID</li>
+                            <li>Favorite WiFi Network</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Activity SharedPreferences</h2>
+                <ul>
+                    <li class="fragment roll-in">
+                        <span class="focus">Activity.getPreferences(int mode)</span>
+                        <ul>
+                            <li>Mode: MODE_PRIVATE, MODE_WORLD_READABLE or MODE_WORLD_WRITEABLE</li>
+                        </ul>
+                    </li>
+                    <li class="fragment roll-in">
+                        Returns a <span class="focus">SharedPreference</span> object for the current Activity
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Application SharedPreferences</h2>
+                <ul>
+                    <li class="fragment roll-in">
+                        <span class="focus">Context.getSharedPreferences(String name, int mode)</span>
+                        <ul>
+                            <li>name – name of SharedPreference file</li>
+                            <li>Mode – MODE_PRIVATE, MODE_WORLD_READABLE or MODE_WORLD_WRITEABLE</li>
+                        </ul>
+                    </li>
+                    <li class="fragment roll-in">
+                        Returns named SharedPreference object for this context
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Writing SharedPreferences</h2>
+                <ul>
+                    <li class="fragment roll-in">
+                        <span class="focus">Call SharedPreferences.edit()</span>
+                        <ul>
+                            <li>Returns a SharedPreferences.Editor instance</li>
+                        </ul>
+                    </li>
+                    <li class="fragment roll-in">
+                        Add values with SharedPreferences.Editor
+                    </li>
+                    <li class="fragment roll-in">
+                        Commit values with SharedPreferences.Editor.commit()
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Reading SharedPreferences</h2>
+                <ul>
+                    <li class="fragment roll-in">
+                        <span class="focus">Use SharedPreferences methods:</span>
+                        <ul>
+                            <li>getAll()</li>
+                            <li>getBoolean()</li>
+                            <li>getString()</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>SharedPreferences</h2>
+<pre>
+<code class="java" contenteditable="false" data-trim>
+private static String HIGH_SCORE = "high_score";
+
+final SharedPreferences prefs = getPreferences(MODE_PRIVATE);
+SharedPreferences.Editor editor = prefs.edit();
+editor.putInt(HIGH_SCORE, val);
+editor.commit();
+</code>
+</pre>
+            </section>
+
+            <section>
+                <h2>Preference Activity</h2>
+                <p>Class that supports displaying & modifying user preferences</p>
+            </section>
+
+            <section>
+                <h2>user_prefs.xml</h2>
+<pre>
+<code class="xml" contenteditable="false" data-trim>
+&lt;PreferenceScreen ...&gt;
+    &lt;EditTextPreference
+        android:dialogMessage="Enter Your User Name"
+        android:dialogTitle=”Change User Name"
+        android:positiveButtonText="Submit"
+        android:negativeButtonText="Cancel"
+        android:title="User Name"
+        android:key="uname"&gt;
+    &lt;/EditTextPreference&gt;
+&lt;/PreferenceScreen&gt;
+</code>
+</pre>
+            </section>
+
         </section>
 
         <section>
