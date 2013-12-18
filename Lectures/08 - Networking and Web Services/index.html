@@ -47,22 +47,180 @@
 
         <section>
             <section>
-                <h1>HTTP Networking</h1>
+                <h1>Networking & HTTP</h1>
             </section>
+
+            <section>
+                <h2>Networking</h2>
+                <ul>
+                    <li class="fragment roll-in">
+                        Many applications use data & services via the Internet
+                    </li>
+                    <li class="fragment roll-in">
+                        Android includes multiple networking support classes
+                        <ul>
+                            <li><span class="focus">java.net – (Socket, URL)</span></li>
+                            <li><span class="focus">org.apache - (HttpRequest, HttpResponse)</span></li>
+                            <li><span class="focus">android.net – (URI, AndroidHttpClient, AudioStream)</span></li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Permissions</h2>
+
+                <p>Typically need permission to access the Internet</p>
+<pre>
+    <code class="xml" contenteditable="false" data-trim>
+        &lt;uses-permission android:name="android.permission.INTERNET" /&gt;
+    </code>
+</pre>
+            </section>
+
+            <section>
+                <h2>HTTP</h2>
+                <ul>
+                    <li class="fragment roll-in">
+                        Hypertext Transfer Protocol
+                    </li>
+                    <li class="fragment roll-in">
+                        Application Layer Protocol
+                    </li>
+                    <li class="fragment roll-in">
+                        GET, POST, PUT, DELETE, HEAD, OPTIONS, and TRACE
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>HTTP</h2>
+                <img src="img/http.png"/>
+            </section>
+
         </section>
 
         <section>
             <section>
-                <h1>XML & JSON Web Services</h1>
+                <h1>XML & JSON</h1>
             </section>
+
+            <section>
+                <h2>Web Services</h2>
+                <blockquote>
+                    A web service is a set of server-side interfaces exposed on the Inter- net using web technologies
+                    such as HTTP for data transfer or XML and JSON for data serialization
+                </blockquote>
+            </section>
+
+            <section>
+                <h2>Serialization/Deserialization</h2>
+                <img src="img/sd.png"/>
+            </section>
+
+            <section>
+                <h2>XML</h2>
+                <ul>
+                    <li class="fragment roll-in">
+                        eXtensible Markup Language
+                        <ul>
+                            <li>See <a href="http://www.w3.org/TR/xml/">http://www.w3.org/TR/xml/</a></li>
+                        </ul>
+                    </li>
+                    <li class="fragment roll-in">
+                        XML documents
+                        <ul>
+                            <li>Made up of storage units called entities</li>
+                            <li>Entities can contain markup, which encodes a description of the document's storage
+                                layout and logical structure
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Parsing XML</h2>
+
+                <p>Several types of parsers available</p>
+                <ul>
+                    <li class="fragment roll-in">
+                        <span class="focus">SAX</span> – streaming with application callbacks
+                    </li>
+                    <li class="fragment roll-in">
+                        <span class="focus">Pull</span> – Application iterates over XML entries
+                    </li>
+                    <li class="fragment roll-in">
+                        <span class="focus">DOM</span> – Coverts document into a tree of nodes
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Sample XML</h2>
+<pre>
+<code class="xml" contenteditable="false" data-trim>
+    <?xml version="1.0" encoding="UTF-8"?>
+    <breakfast_menu>
+        <food>
+            <name>Belgian Waffles</name>
+            <price>$5.95</price>
+            <description>Two of our famous Belgian Waffles</description>
+            <calories>650</calories>
+        </food>
+        <food>
+            <name>Homestyle Breakfast</name>
+            <price>$6.95</price>
+            <description>Two eggs, bacon or sausage or toast</description>
+            <calories>950</calories>
+        </food>
+    </breakfast_menu>
+</code>
+</pre>
+            </section>
+
+            <section>
+                <h2>JSON</h2>
+                <ul>
+                    <li class="fragment roll-in">
+                        Javascript Object Notation
+                        <ul>
+                            <li>See <a href="http://www.json.org/">http://www.json.org/</a></li>
+                        </ul>
+                    </li>
+                    <li class="fragment roll-in">
+                        Intended to be a lightweight data interchange format
+                    </li>
+                    <li class="fragment roll-in">
+                        Data packaged in two types of structures
+                        <ul>
+                            <li>Maps of key/value pairs</li>
+                            <li>Ordered lists of values</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Sample JSON</h2>
+<pre>
+<code class="xml" contenteditable="false" data-trim>
+{
+    "employees": [
+        { "firstName":"John" , "lastName":"Doe" },
+        { "firstName":"Anna" , "lastName":"Smith" },
+        { "firstName":"Peter" , "lastName":"Jones" }
+    ]
+}
+</code>
+</pre>
+            </section>
+
         </section>
 
         <section>
-            <section>
-                <h1>Recovering Network Failures</h1>
-            </section>
+            <h1>Demo</h1>
         </section>
-
 
         <section>
             <section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
